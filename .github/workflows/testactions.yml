@@ -29,7 +29,7 @@ jobs:
           key: ${{ runner.os }}-env-${{ hashFiles('**/requirements*.txt') }}
           restore-keys: |
             ${{ runner.os }}-env-
-    # Build a virtualenv, but only if it doesn't already exist
+      #Build a virtualenv, but only if it doesn't already exist
       - name: Install dependencies and run pytest
         run: |
           echo "------------- Getting test scripts and running pytest and coverage --------"
