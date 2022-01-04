@@ -11,7 +11,7 @@ coverage_file=coverage.json
 
 coverage_percentage=$(jq .totals.percent_covered_display $coverage_file)
 echo "$coverage_percentage"
-if [ "$coverage_percentage" > "95" ]; then
+if [ "$coverage_percentage" >= "95" ]; then
     echo "Unit test passed with accepted coverage"
 else
     echo "Unit test coverage is less than 95."
