@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-env-
       - name: Install dependencies and run pytest
         run: |
-          echo "------------- Getting test scripts and running pytest and coverage --------"
+          echo "------------- Installing dependencies, running pytest and coverage --------"
           NPM=package.json
           for file in *; do
             if [ -d "$file" ]; then

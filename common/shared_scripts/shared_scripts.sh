@@ -6,15 +6,16 @@ python3 -m pip install --user virtualenv
 python3 -m venv env && source env/bin/activate && pip install -r requirements.txt
 echo "-------------- Running unit tests before deployment ------------------"
 coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
-coverage json --fail-under=50
+coverage json --fail-under=95
 coverage_file=coverage.json
 
 coverage_percentage=$(jq .totals.percent_covered_display $coverage_file)
 
-if [ "$coverage_percentage" < "95" ]; then
-    echo "GOOD ###############################"
+if [ "$coverage_percentage" > "95" ]; then
+    echo "Unit test passed with accepted coverage"
 else
-    echo "Unit test coverage is less than 95. Failing build"
+    echo "Unit test coverage is less than 95."
+    echo "Failing build......."
     exit 1
 fi
 deactivate
