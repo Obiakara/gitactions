@@ -8,10 +8,10 @@ echo "-------------- Running unit tests before deployment ------------------"
 coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
 coverage json --fail-under=95
 coverage_file=coverage.json
-
+coverage_mark=95
 coverage_percentage=$(jq -r .totals.percent_covered_display $coverage_file)
 echo "$coverage_percentage"
-if [ "$coverage_percentage" -ge 50 ]; then
+if [ "$coverage_percentage" -ge "$coverage_mark" ]; then
     echo "Unit test passed with accepted coverage"
 else
     echo "Unit test coverage is less than 95."
