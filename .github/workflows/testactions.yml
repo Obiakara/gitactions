@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies and run pytest
         run: |
           echo "------------- Getting test scripts and running pytest and coverage --------"
-      # Here I'm looping through each service and running npm run test on each service containing a package.json file
+      # Here I'm looping through each service and running npm run test on each service containing a package.json fil
           NPM=package.json
           for file in *; do
             if [ -d "$file" ]; then
