@@ -21,4 +21,4 @@ else
 fi
 deactivate
 echo "-------------- Unit tests finished -----------------"
-echo "-------------- Starting to deploy -----------------"
+echo "-------------- Starting to deploy ------------------"
