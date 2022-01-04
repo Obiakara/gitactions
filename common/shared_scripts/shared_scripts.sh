@@ -9,7 +9,7 @@ coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
 coverage json --fail-under=50
 coverage_file=coverage.json
 
-coverag_mark=95
+coverage_mark=95
 coverage_percentage=$(jq .totals.percent_covered_display $coverage_file)
 
 if [ "$coverage_percentage" < "$coverage_mark" ]; then
