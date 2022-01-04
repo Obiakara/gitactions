@@ -8,7 +8,7 @@ echo "-------------- Running unit tests before deployment ------------------"
 #coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
 #coverage run --omit 'env/**/*' -m pytest -rp
 coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
-coverage json --fail-under=95
+coverage json --fail-under=50
 ls
 #x=$(coverage report --fail-under=70)
 coverage_file=coverage.json
