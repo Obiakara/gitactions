@@ -4,7 +4,7 @@ echo "------------- Getting test scripts files and dependencies --------"
 python3 -m pip install --user virtualenv
 # shellcheck disable=SC1091
 python3 -m venv env && source env/bin/activate && pip install -r requirements.txt
-echo "-------------- Running unit tests before deployment ---------------"
+echo "-------------- Running unit tests before deployment ------------------"
 #coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
 #coverage run --omit 'env/**/*' -m pytest -rp
 coverage json --fail-under=95
