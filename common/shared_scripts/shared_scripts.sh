@@ -14,7 +14,7 @@ ls
 coverage_file=coverage.json
 coverage_percentage=$(jq .totals.percent_covered_display $coverage_file)
 echo "$coverage_percentage"
-if [ "$coverage_percent" == 70 ]; then
+if [ "$coverage_percent" == 80 ]; then
     echo "GOOD ###############################"
 else
     echo "Exiting"
