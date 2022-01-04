@@ -41,7 +41,6 @@ jobs:
               fi
             fi
           done
-        if: steps.cache.outputs.cache-hit != 'true'
       - name: Run tests with pytest
         run: |
           cd main
