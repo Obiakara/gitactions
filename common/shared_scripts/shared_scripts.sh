@@ -9,7 +9,7 @@ coverage run --omit 'env/**/*' -m pytest -rp && coverage report -m
 coverage json --fail-under=95
 coverage_file=coverage.json
 
-coverage_percentage=$(jq .totals.percent_covered_display $coverage_file)
+coverage_percentage=$(jq -r .totals.percent_covered_display $coverage_file)
 echo "$coverage_percentage"
 if [ "$coverage_percentage" -ge 95 ]; then
     echo "Unit test passed with accepted coverage"
