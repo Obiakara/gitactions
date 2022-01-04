@@ -12,10 +12,10 @@ coverage_file=coverage.json
 alleowed_coverage=95
 coverage_percentage=$(jq .totals.percent_covered_display $coverage_file)
 
-if [ "$coverage_percentage" < "allowed_coverage" ]; then
+if [ "$coverage_percentage" < "$coverage_mark" ]; then
     echo "GOOD ###############################"
 else
-    echo "Unit test coverage is less than $allowed_coverage. Failing build"
+    echo "Unit test coverage is less than $coverage_mark. Failing build"
     exit 1
 fi
 deactivate
