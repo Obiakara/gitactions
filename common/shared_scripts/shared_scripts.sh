@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "------------- Getting test scripts files and dependencies --------"
+echo "------------- Getting test scripts files and dependencies -----------"
 python3 -m pip install --user virtualenv
 # shellcheck disable=SC1091
 python3 -m venv env && source env/bin/activate && pip install -r requirements.txt
