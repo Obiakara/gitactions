@@ -20,5 +20,5 @@ else
     exit 1
 fi
 deactivate
-echo "-------------- Unit tests finished -----------------"
+echo "-------------- Unit tests finished --------------------"
 echo "-------------- Starting to deploy ------------------"
