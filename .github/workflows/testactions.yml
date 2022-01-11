@@ -33,6 +33,7 @@ jobs:
             ${{ runner.os }}-env-
 
       - name: Install dependencies and run pytest
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
           echo "------------- Installing dependencies, running pytest and coverage --------"
           NPM=package.json
